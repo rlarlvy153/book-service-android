@@ -11,6 +11,7 @@ import com.kakao.book_service_android.ui.search.SearchConstant
 import io.reactivex.Observable
 import org.koin.core.KoinComponent
 import org.koin.core.inject
+import timber.log.Timber
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
@@ -33,6 +34,7 @@ class BookViewModel : BaseViewModel(), KoinComponent {
 
     init {
         bookmarkList.value = LinkedList()
+        searchedResult.value = ArrayList()
     }
 
     val isSearchingLiveData = MutableLiveData(false)
@@ -85,7 +87,7 @@ class BookViewModel : BaseViewModel(), KoinComponent {
 
     private fun searchNext() {
         val shouldSearchQuery = getShouldSearchQuery(lastSearchedQuery)
-
+        Timber.d(shouldSearchQuery.toString())
         initQueryResultMap(shouldSearchQuery)
 
         searchBooksWithList(shouldSearchQuery)
@@ -113,7 +115,6 @@ class BookViewModel : BaseViewModel(), KoinComponent {
             for (result in it.withIndex()) {
                 val resultSearchedModel = (result.value as SearchResult)
                 val queriedString = queryList[result.index]
-
                 addSearchedMapResult(queriedString, resultSearchedModel)
             }
 
@@ -136,7 +137,6 @@ class BookViewModel : BaseViewModel(), KoinComponent {
                     searchedResult.value = searchedResult.value
                 }
                 isSearchingLiveData.value = false
-
             },
             {
                 sendErrorMessage(AppComponents.applicationContext.getString(R.string.error_message))

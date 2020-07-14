@@ -201,7 +201,6 @@ class DetailedActivity : AppCompatActivity(), KoinComponent {
         result.putExtra(IS_BOOK_MARKED, bookmarkCheck.isChecked)
 
         setResult(RESULT_OK, result)
-        Timber.d(currentBook.toString())
         finish()
     }
 }
