@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">kakao 책 검색기</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_button_text">검색</string>
+
+    <string name="title_header">제목 : </string>
+    <string name="subtitle_header">부제 : </string>
+    <string name="price_header">가격 : </string>
+    <string name="isbn13_header">isbn13 : </string>
+    <string name="url_header">url : </string>
+
+    <string name="bookmark_title_header">제목 : </string>
+    <string name="bookmark_subtitle_header">부제 : </string>
+    <string name="bookmark_price_header">가격 : </string>
+    <string name="bookmark_isbn13_header">isbn13 : </string>
+    <string name="bookmark_url_header">url : </string>
+
+    <string name="search_query_empty">검색창이 비어있습니다.</string>
+    <string name="exceed_max_query">최대 검색가능 단어 수를 초과하였습니다.</string>
+
+    <string name="bookmark">북마크</string>
+
+    <string name="book_image_description">book image</string>
+    <string name="book_detailed_image_description">detailed book image</string>
+
+    <string-array name="book_tab_items">
+        <item>검색</item>
+        <item>북마크</item>
+    </string-array>
+
+    <string name="search_book_hint">검색어를 입력하세요</string>
+    <string name="error_message">에러가 발생했습니다.</string>
+
+    <string name="detailed_title">제목 : </string>
+    <string name="detailed_subtitle">부제 : </string>
+    <string name="detailed_authors">저자 : </string>
+    <string name="detailed_publisher">출판 : </string>
+    <string name="detailed_isbn10">isbn10 : </string>
+    <string name="detailed_isbn13">isbn13 : </string>
+    <string name="detailed_page">페이지 : </string>
+    <string name="detailed_year">출간년도 : </string>
+    <string name="detailed_rating">평점 : </string>
+    <string name="detailed_desc">설명 : </string>
+    <string name="detailed_price">가격 : </string>
+    <string name="detailed_url">URL : </string>
+    <string name="detailed_pdf">pdf : </string>
+
+    <string name="empty_pdf">정보 없음</string>
+</resources>
