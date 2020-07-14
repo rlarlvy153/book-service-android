@@ -26,6 +26,7 @@ class BooksFragment : Fragment(), KoinComponent {
 
     companion object {
         const val CALL_BY_SIMPLE_BOOK_DATA = 2
+        const val MAX_SEARCH_HISTORY = 10
 
         val instance = BooksFragment()
     }
@@ -55,7 +56,7 @@ class BooksFragment : Fragment(), KoinComponent {
                 return@setOnClickListener
             }
 
-            val splitAndTrimmed = searchEdit.text.toString().split(",").joinToString { it.trim() }
+            val splitAndTrimmed = searchEdit.text.toString().split(SearchConstant.SEARCH_DELIMITER).joinToString { it.trim() }
 
             searchEdit.setText(splitAndTrimmed)
 
@@ -77,6 +78,10 @@ class BooksFragment : Fragment(), KoinComponent {
             searchHistory.remove(query)
         }
         searchHistory.addFirst(query)
+
+        if(searchHistory.size > MAX_SEARCH_HISTORY){
+            searchHistory.removeLast()
+        }
 
         context?.let {
             searchEdit.setAdapter(ArrayAdapter(it, android.R.layout.simple_dropdown_item_1line, searchHistory))
